@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
     learnings: 'Perfeccioné la implementación de Zustand para gestión de estado sin prop drilling y re-renders innecesarios, además de pulir la arquitectura CSS con Tailwind.',
     technologies: ['React', 'Tailwind CSS', 'Zustand', 'TypeScript'],
     status: 'Activo',
-    demoUrl: 'https://ais-pre-4sl6wniyl5lqjydr7stf64-363399254542.us-west2.run.app',
+    demoUrl: 'https://carmen-p-tisserie.vercel.app/',
     githubUrl: 'https://github.com/matiasatuan/carmen-patisserie',
     image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80',
   },
