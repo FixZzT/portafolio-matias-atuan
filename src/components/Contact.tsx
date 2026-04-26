@@ -4,7 +4,6 @@ import { useState, FormEvent } from 'react';
 
 export function Contact() {
   const [status, setStatus] = useState('idle');
-  // REEMPLAZA ESTE ID con el que te dé Formspree.io
   const FORMSPREE_ID = "mwvazngj"; 
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
