@@ -71,7 +71,7 @@ export const PROJECTS: Project[] = [
     technologies: ['React', 'Tailwind CSS', 'Zustand', 'TypeScript'],
     status: 'Activo',
     demoUrl: 'https://carmen-p-tisserie.vercel.app/',
-    githubUrl: 'https://github.com/matiasatuan/carmen-patisserie',
+    githubUrl: 'https://github.com/FixZzT/carmen-p-tisserie',
     image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80',
   },
   {
