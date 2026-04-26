@@ -57,7 +57,7 @@ export function Hero() {
               <a href="https://github.com/matiasatuan" target="_blank" rel="noreferrer" className="p-4 rounded-full glass-panel text-text-main hover:text-primary hover:border-primary/50 transition-all flex-[1] sm:flex-none flex justify-center">
                 <Github size={20} />
               </a>
-              <a href="#" target="_blank" rel="noreferrer" className="p-4 rounded-full glass-panel text-text-main hover:text-secondary hover:border-secondary/50 transition-all flex-[1] sm:flex-none flex justify-center">
+              <a href="https://www.linkedin.com/in/matias-nicolas-atuan-mutis-7165b930b/" target="_blank" rel="noreferrer" className="p-4 rounded-full glass-panel text-text-main hover:text-secondary hover:border-secondary/50 transition-all flex-[1] sm:flex-none flex justify-center">
                 <Linkedin size={20} />
               </a>
               <a href="mailto:matixxxd9@gmail.com" className="p-4 rounded-full glass-panel text-text-main hover:text-primary hover:border-primary/50 transition-all flex-[1] sm:flex-none flex justify-center">
