@@ -15,7 +15,7 @@ export function Footer() {
 
         <div className="flex gap-6 text-[10px] font-mono text-text-muted uppercase tracking-widest font-bold">
           <a href="https://github.com/matiasatuan" className="hover:text-primary transition-colors">GitHub</a>
-          <a href="#" className="hover:text-secondary transition-colors">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/matias-nicolas-atuan-mutis-7165b930b/" className="hover:text-secondary transition-colors">LinkedIn</a>
           <a href="mailto:matixxxd9@gmail.com" className="hover:text-primary transition-colors">Email</a>
         </div>
 
