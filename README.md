@@ -1,6 +1,6 @@
 # 👨‍💻 Portafolio | Matías Atuan
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue.svg?style=flat-square&logo=linkedin)](https://www.linkedin.com/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue.svg?style=flat-square&logo=linkedin)](https://www.linkedin.com/matias-nicolas-atuan-mutis-7165b930b)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black.svg?style=flat-square&logo=github)](https://github.com/FixZzT)
 
 Bienvenidos a mi portafolio digital. Soy **Ingeniero Civil Informático** con un enfoque analítico y resolutivo, apasionado por la extracción de valor a partir de los datos y la seguridad de la información. Este repositorio documenta mis proyectos técnicos, demostrando mis capacidades en desarrollo, automatización y análisis.
