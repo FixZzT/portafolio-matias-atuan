@@ -41,7 +41,7 @@ export function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="glass-panel p-8 md:p-10 rounded-[2rem] group hover:bg-white/[0.02] border border-white/5 transition-colors"
+                  className="glass-panel bg-secondary/10 p-8 md:p-10 rounded-[2rem] group hover:bg-secondary/20 border border-secondary/20 transition-colors"
                 >
                   <div className="w-14 h-14 rounded-2xl bg-bg-elevated/50 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
                     <Icon size={24} />

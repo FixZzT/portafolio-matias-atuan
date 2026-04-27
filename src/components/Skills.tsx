@@ -1,5 +1,31 @@
 import { motion } from 'motion/react';
+import { SiHtml5, SiCss, SiJavascript, SiReact, SiTailwindcss, SiPython, SiDjango, SiNodedotjs, SiExpress, SiMysql, SiPostgresql, SiMongodb, SiGit, SiGithub, SiLinux, SiDocker, SiScrumalliance, SiJira, SiPostman, SiCircleci } from 'react-icons/si';
+import { Code2, Star } from 'lucide-react';
 import { SKILLS } from '../lib/data';
+
+const skillIcons = {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiReact,
+  SiTailwindcss,
+  SiPython,
+  SiDjango,
+  SiNodedotjs,
+  SiExpress,
+  SiMysql,
+  SiPostgresql,
+  SiMongodb,
+  SiGit,
+  SiGithub,
+  SiLinux,
+  SiDocker,
+  SiScrumalliance,
+  SiJira,
+  SiPostman,
+  SiCircleci,
+  Code2,
+};
 
 export function Skills() {
   return (
@@ -29,15 +55,19 @@ export function Skills() {
                 <span className="w-2 h-2 rounded-full bg-secondary block"></span>
                 {skillGroup.category}
               </h4>
-              <div className="flex flex-wrap gap-2.5">
-                {skillGroup.items.map((item) => (
-                  <span 
-                    key={item}
-                    className="px-4 py-2 bg-bg-base border border-white/5 rounded-xl text-xs font-mono tracking-wide text-text-muted hover:text-text-main hover:border-primary/20 transition-all cursor-default"
-                  >
-                    {item}
-                  </span>
-                ))}
+              <div className="flex flex-wrap gap-3">
+                {skillGroup.items.map((item) => {
+                  const Icon = skillIcons[item.icon as keyof typeof skillIcons] || Star;
+                  return (
+                    <span
+                      key={item.name}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-xl border border-white/5 bg-bg-base text-xs font-mono tracking-wide transition-all cursor-default hover:text-text-main hover:border-primary/20 ${item.textClass}`}
+                    >
+                      <Icon className={`w-4 h-4 ${item.textClass}`} />
+                      {item.name}
+                    </span>
+                  );
+                })}
               </div>
             </motion.div>
           ))}

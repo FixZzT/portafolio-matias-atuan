@@ -7,34 +7,66 @@ export const NAV_LINKS = [
   { name: "Contacto", href: "#contacto" },
 ];
 
+export type SkillItem = {
+  name: string;
+  icon: string;
+  textClass: string;
+};
+
 export const SKILLS = [
   {
     category: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
+    items: [
+      { name: "HTML", icon: "SiHtml5", textClass: "text-orange-500" },
+      { name: "CSS", icon: "SiCss3", textClass: "text-sky-500" },
+      { name: "JavaScript", icon: "SiJavascript", textClass: "text-yellow-500" },
+      { name: "React", icon: "SiReact", textClass: "text-sky-600" },
+      { name: "Tailwind CSS", icon: "SiTailwindcss", textClass: "text-teal-600" },
+    ],
     color: "bg-primary/20 text-primary",
     borderColor: "border-primary/30",
   },
   {
     category: "Backend",
-    items: ["Python", "Django", "Node.js", "Express"],
+    items: [
+      { name: "Python", icon: "SiPython", textClass: "text-emerald-600" },
+      { name: "Django", icon: "SiDjango", textClass: "text-green-600" },
+      { name: "Node.js", icon: "SiNodedotjs", textClass: "text-lime-600" },
+      { name: "Express", icon: "SiExpress", textClass: "text-indigo-600" },
+    ],
     color: "bg-accent/20 text-accent",
     borderColor: "border-accent/30",
   },
   {
     category: "Bases de Datos",
-    items: ["MySQL", "PostgreSQL", "MongoDB"],
+    items: [
+      { name: "MySQL", icon: "SiMysql", textClass: "text-cyan-600" },
+      { name: "PostgreSQL", icon: "SiPostgresql", textClass: "text-slate-700" },
+      { name: "MongoDB", icon: "SiMongodb", textClass: "text-emerald-700" },
+    ],
     color: "bg-secondary/20 text-secondary",
     borderColor: "border-secondary/30",
   },
   {
     category: "Herramientas",
-    items: ["Git", "GitHub", "Linux", "VS Code", "Docker"],
+    items: [
+      { name: "Git", icon: "SiGit", textClass: "text-slate-700" },
+      { name: "GitHub", icon: "SiGithub", textClass: "text-slate-700" },
+      { name: "Linux", icon: "SiLinux", textClass: "text-amber-700" },
+      { name: "VS Code", icon: "Code2", textClass: "text-violet-700" },
+      { name: "Docker", icon: "SiDocker", textClass: "text-blue-700" },
+    ],
     color: "bg-blue-500/20 text-blue-400",
     borderColor: "border-blue-500/30",
   },
   {
     category: "Metodologías",
-    items: ["Scrum", "Agile", "APIs REST", "CI/CD"],
+    items: [
+      { name: "Scrum", icon: "SiScrumalliance", textClass: "text-fuchsia-700" },
+      { name: "Agile", icon: "SiJira", textClass: "text-violet-700" },
+      { name: "APIs REST", icon: "SiPostman", textClass: "text-cyan-700" },
+      { name: "CI/CD", icon: "SiCircleci", textClass: "text-rose-700" },
+    ],
     color: "bg-purple-500/20 text-purple-400",
     borderColor: "border-purple-500/30",
   },
