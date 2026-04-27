@@ -52,8 +52,6 @@ A lo largo de mi trayectoria académica y profesional, he trabajado con las sigu
 
 ## 📈 Estadísticas de GitHub
 
-*(Opcional: Puedes agregar tarjetas de estadísticas generadas dinámicamente si usas este README como tu perfil principal de GitHub)*
-
 ![Estadísticas de Matías](https://github-readme-stats.vercel.app/api?username=FixZzT&show_icons=true&theme=radical&hide_border=true)
 ![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=FixZzT&layout=compact&theme=radical&hide_border=true)
 
