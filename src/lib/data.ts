@@ -60,7 +60,6 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-<<<<<<< HEAD
     id: "carmen-patisserie",
     title: "Carmen Pâtisserie",
     shortDescription:
@@ -81,21 +80,6 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/matiasatuan/carmen-patisserie",
     image:
       "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
-=======
-    id: 'carmen-patisserie',
-    title: 'Carmen Pâtisserie',
-    shortDescription: 'E-commerce para una pastelería artesanal. Diseño bilingüe, con sistema de carrito de compras y optimización de conversiones.',
-    fullDescription: 'E-commerce web moderno desarrollado para una pastelería artesanal de alta gama. El proyecto integró un sistema de navegación bilingüe y un manejo de carrito de compras completamente reactivo, enfocado en brindar una experiencia de usuario del más alto nivel con animaciones fluidas.',
-    problem: 'La pastelería necesitaba digitalizar sus ventas mediante una plataforma elegante, rápida e internacional, sin comprometer el rendimiento visual de sus productos.',
-    architecture: 'Frontend escalable implementado como SPA. Utiliza React y Tailwind CSS, y Zustand para la gestión de estado global del carrito y preferencias.',
-    challenges: 'El reto principal consistió en mantener animaciones fluidas y tiempos de carga instantáneos, sincronizando el estado global localmente sin comprometer el rendimiento general (LCP, CLS).',
-    learnings: 'Perfeccioné la implementación de Zustand para gestión de estado sin prop drilling y re-renders innecesarios, además de pulir la arquitectura CSS con Tailwind.',
-    technologies: ['React', 'Tailwind CSS', 'Zustand', 'TypeScript'],
-    status: 'Activo',
-    demoUrl: 'https://carmen-p-tisserie.vercel.app/',
-    githubUrl: 'https://github.com/FixZzT/carmen-p-tisserie',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80',
->>>>>>> 5d8add35e488725aa1f6c731bcb19eb4c0fd9521
   },
   {
     id: "sistema-rest-api",
