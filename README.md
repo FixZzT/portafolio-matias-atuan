@@ -63,7 +63,7 @@ A lo largo de mi trayectoria académica y profesional, he trabajado con las sigu
 
 Si estás interesado en colaborar en algún proyecto, discutir sobre análisis de datos o ciberseguridad, no dudes en contactarme:
 
-* 📧 **Email:** [tu-correo@email.com](mailto:tu-correo@email.com)
+* 📧 **Email:** [matiasatuan.2018@gmail.com](mailto:matiasatuan.2018@gmail.com)
 * 💼 **LinkedIn:** [Matías Atuan](https://www.linkedin.com/)
 
 ---
