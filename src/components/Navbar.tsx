@@ -47,13 +47,6 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
-            <a 
-              href="/cv.pdf"
-              download
-              className="ml-4 px-5 py-2.5 bg-primary text-bg-base text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-white hover:text-bg-base transition-colors border border-transparent"
-            >
-              Curriculum vitae
-            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -85,13 +78,6 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
-            <a 
-              href="/cv.pdf"
-              download
-              className="mt-4 px-6 py-4 bg-primary text-white text-center font-bold uppercase tracking-widest text-xs rounded-xl"
-            >
-              Descargar CV
-            </a>
           </motion.div>
         )}
       </AnimatePresence>
