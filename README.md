@@ -34,8 +34,6 @@ A lo largo de mi trayectoria académica y profesional, he trabajado con las sigu
 
 ## 📁 Proyectos Destacados
 
-*(Añade aquí enlaces directos a otros repositorios o carpetas dentro de este portafolio)*
-
 ### 1. 📊 [Análisis de Precios de Mercado]
 * **Descripción:** Proyecto desarrollado en R para el análisis longitudinal y la limpieza de datos sobre precios mayoristas, visualizando tendencias y variaciones estadísticas a lo largo del tiempo.
 * **Tecnologías:** `R`, `RStudio`, `Data Visualization`.
