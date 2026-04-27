@@ -1,14 +1,36 @@
 import { motion } from 'motion/react';
 import { Mail, ArrowRight, Github, Linkedin, MessageSquareCode } from 'lucide-react';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 
 export function Contact() {
   const [status, setStatus] = useState('idle');
+  const FORMSPREE_ID = "mwvazngj"; 
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('loading');
-    setTimeout(() => setStatus('success'), 1500);
+    
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
   };
 
   return (
@@ -52,29 +74,32 @@ export function Contact() {
               <div className="grid md:grid-cols-2 gap-6">
                 <input 
                   type="text" 
+                  name="name"
                   placeholder="Tu Nombre" 
                   required
                   className="w-full bg-[#0B1120]/50 border border-white/5 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary focus:bg-[#0B1120] transition-colors font-mono text-sm shadow-inner"
                 />
                 <input 
                   type="email" 
+                  name="email"
                   placeholder="Tu Email / Empresa" 
                   required
                   className="w-full bg-[#0B1120]/50 border border-white/5 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary focus:bg-[#0B1120] transition-colors font-mono text-sm shadow-inner"
                 />
               </div>
               <textarea 
+                name="message"
                 placeholder="Cuéntame sobre tu proyecto..." 
                 required
                 rows={5}
                 className="w-full bg-[#0B1120]/50 border border-white/5 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary focus:bg-[#0B1120] transition-colors resize-none font-mono text-sm shadow-inner"
               />
               <button 
-                disabled={status !== 'idle'}
+                disabled={status !== 'idle' && status !== 'error'}
                 type="submit"
                 className="w-full flex items-center justify-center gap-3 bg-primary text-bg-base py-5 rounded-2xl font-bold uppercase tracking-widest text-[11px] hover:bg-white transition-all disabled:opacity-50 mt-2 shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-primary/50"
               >
-                {status === 'loading' ? 'Enviando...' : status === 'success' ? 'Recibido Correctamente' : 'Enviar Mensaje'}
+                {status === 'loading' ? 'Enviando...' : status === 'success' ? '¡Mensaje Enviado!' : status === 'error' ? 'Hubo un error' : 'Enviar Mensaje'}
                 {status === 'idle' && <ArrowRight size={16} />}
               </button>
             </form>

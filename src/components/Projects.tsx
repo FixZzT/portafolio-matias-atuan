@@ -59,14 +59,14 @@ export function Projects() {
                         href={project.demoUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex-1 sm:flex-none flex justify-center items-center gap-3 px-8 py-4 bg-text-main text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-lg hover:shadow-primary/20"
+                        className="flex-1 sm:flex-none flex justify-center items-center gap-3 px-8 py-4 bg-secondary text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-bg-base transition-all shadow-lg hover:shadow-secondary/30 shadow-[0_0_15px_rgba(59,130,246,0.3)]"
                       >
                         Live Demo <ExternalLink size={16} />
                       </a>
                     ) : (
                       <button 
                         onClick={() => setSelectedProject(project)}
-                        className="flex-1 sm:flex-none flex justify-center items-center gap-3 px-8 py-4 bg-text-main text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-lg hover:shadow-primary/20"
+                        className="flex-1 sm:flex-none flex justify-center items-center gap-3 px-8 py-4 bg-secondary text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-bg-base transition-all shadow-lg hover:shadow-secondary/30 shadow-[0_0_15px_rgba(59,130,246,0.3)]"
                       >
                         Caso de Estudio <ExternalLink size={16} />
                       </button>
