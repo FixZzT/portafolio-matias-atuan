@@ -50,9 +50,11 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
           >
             {/* Header / Image Image */}
             <div className="relative h-48 md:h-64 shrink-0 bg-bg-surface">
-              <img 
-                src={project.image} 
+              <img
+                src={project.image}
                 alt={project.title}
+                width={800}
+                height={400}
                 className="w-full h-full object-cover opacity-60"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg-base to-transparent opacity-90" />
@@ -65,7 +67,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               </button>
 
               <div className="absolute bottom-6 left-6 right-6">
-                <h3 className="text-3xl md:text-5xl font-display font-bold text-text-main mb-4">{project.title}</h3>
+                <h3 className="text-3xl md:text-5xl font-display font-semibold text-text-main mb-4">{project.title}</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map(tech => (
                     <span key={tech} className="text-[10px] font-mono text-primary border border-primary/20 bg-primary/5 px-3 py-1 rounded-full uppercase tracking-widest font-bold">

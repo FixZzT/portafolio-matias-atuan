@@ -18,7 +18,7 @@ export function Projects() {
         >
           <div>
             <h2 className="text-[10px] font-mono text-secondary uppercase font-bold tracking-widest mb-4">Portafolio</h2>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-text-main leading-tight">Proyectos</h3>
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-text-main leading-tight">Proyectos</h3>
           </div>
           <p className="text-text-muted max-w-md mt-6 lg:mt-0 text-base md:text-lg">
             Proyectos reales que demuestran mi capacidad para arquitectar, desarrollar y entregar soluciones completas de alto valor.
@@ -46,7 +46,7 @@ export function Projects() {
                     ))}
                   </div>
 
-                  <h4 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-text-main mb-6 group-hover:text-primary transition-colors">
+                  <h4 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-text-main mb-6 group-hover:text-primary transition-colors">
                     {project.title}
                   </h4>
                   <p className="text-text-muted text-base md:text-lg leading-relaxed mb-10">
@@ -94,9 +94,12 @@ export function Projects() {
 
                 {/* Image Container */}
                 <div className={`relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-bg-base border border-white/5 order-1 ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
+                    loading="lazy"
+                    width={800}
+                    height={600}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-base via-transparent to-transparent opacity-80" />

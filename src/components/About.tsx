@@ -15,7 +15,7 @@ export function About() {
               className="sticky top-32"
             >
               <h2 className="text-[10px] font-mono text-secondary uppercase font-bold tracking-widest mb-4">Sobre Mí</h2>
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-text-main leading-[1.1] mb-8">
+              <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-text-main leading-[1.1] mb-8">
                 Construyendo el futuro digital.
               </h3>
               <p className="text-text-muted text-lg leading-relaxed mb-6">
@@ -47,7 +47,7 @@ export function About() {
                     <Icon size={24} />
                   </div>
                   <h4 className="text-xl font-heading font-bold text-text-main mb-3">{item.title}</h4>
-                  <p className="text-[#94A3B8] leading-relaxed text-sm md:text-base">{item.desc}</p>
+                  <p className="text-text-muted leading-relaxed text-sm md:text-base">{item.desc}</p>
                 </motion.div>
               )
             })}

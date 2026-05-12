@@ -12,7 +12,7 @@ export function Experience() {
           className="mb-16 md:mb-24 text-center"
         >
           <h2 className="text-[10px] font-mono text-secondary uppercase font-bold tracking-widest mb-4">Trayectoria</h2>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-text-main">Mi Experiencia</h3>
+          <h3 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-text-main">Mi Experiencia</h3>
         </motion.div>
 
         <div className="relative border-l border-white/10 ml-4 md:ml-8 border-dashed">
@@ -26,10 +26,10 @@ export function Experience() {
               className="mb-16 pl-8 md:pl-12 relative group"
             >
               {/* Point */}
-              <div className="absolute size-4 bg-bg-base border-2 border-primary rounded-full -left-[8px] top-2 group-hover:scale-150 transition-transform duration-300 group-hover:bg-primary shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
+              <div className="absolute size-4 bg-bg-base border-2 border-primary rounded-full -left-[8px] top-2 group-hover:scale-150 transition-transform duration-300 group-hover:bg-primary shadow-[0_0_15px_rgba(0,240,255,0.5)]" />
               
                <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-3">
-                <h4 className="text-2xl md:text-3xl font-heading font-bold text-text-main">{item.title}</h4>
+                <h4 className="text-2xl md:text-3xl font-heading font-semibold text-text-main">{item.title}</h4>
                 <span className="text-xs font-mono text-primary uppercase font-bold tracking-widest bg-primary/10 px-3 py-1 rounded-full border border-primary/20">{item.period}</span>
               </div>
               

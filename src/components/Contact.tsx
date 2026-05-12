@@ -29,6 +29,7 @@ export function Contact() {
         setStatus('error');
       }
     } catch (error) {
+      console.error('Error al enviar el formulario:', error);
       setStatus('error');
     }
   };
@@ -46,7 +47,7 @@ export function Contact() {
             viewport={{ once: true }}
             className="flex flex-col items-center text-center"
           >
-            <div className="size-16 rounded-2xl bg-primary flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(239,68,68,0.3)]">
+            <div className="size-16 rounded-2xl bg-primary flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(0,240,255,0.3)]">
               <MessageSquareCode size={32} className="text-white" />
             </div>
             
@@ -68,23 +69,25 @@ export function Contact() {
             className="glass-panel p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden"
           >
             {/* Subtle inner glow */}
-             <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-[80px] pointer-events-none -mr-32 -mt-32" />
+             <div className="absolute top-0 right-0 size-64 bg-secondary/10 rounded-full blur-[80px] pointer-events-none -mr-32 -mt-32" />
              
             <form onSubmit={handleSubmit} className="relative z-10 grid gap-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <input 
-                  type="text" 
+                  type="text"
                   name="name"
-                  placeholder="Tu Nombre" 
+                  placeholder="Tu Nombre"
                   required
-                  className="w-full bg-[#0B1120]/50 border border-white/5 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary focus:bg-[#0B1120] transition-colors font-mono text-sm shadow-inner"
+                  autoComplete="name"
+                  className="w-full bg-[#0B1120]/50 border border-white/5 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary focus:bg-[#0B1120] focus-visible:ring-2 focus-visible:ring-primary/50 transition-colors font-mono text-sm shadow-inner"
                 />
                 <input 
-                  type="email" 
+                  type="email"
                   name="email"
-                  placeholder="Tu Email / Empresa" 
+                  placeholder="Tu Email / Empresa"
                   required
-                  className="w-full bg-[#0B1120]/50 border border-white/5 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary focus:bg-[#0B1120] transition-colors font-mono text-sm shadow-inner"
+                  autoComplete="email"
+                  className="w-full bg-[#0B1120]/50 border border-white/5 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary focus:bg-[#0B1120] focus-visible:ring-2 focus-visible:ring-primary/50 transition-colors font-mono text-sm shadow-inner"
                 />
               </div>
               <textarea 
@@ -92,14 +95,14 @@ export function Contact() {
                 placeholder="Cuéntame sobre tu proyecto..." 
                 required
                 rows={5}
-                className="w-full bg-[#0B1120]/50 border border-white/5 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary focus:bg-[#0B1120] transition-colors resize-none font-mono text-sm shadow-inner"
+                className="w-full bg-[#0B1120]/50 border border-white/5 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary focus:bg-[#0B1120] focus-visible:ring-2 focus-visible:ring-primary/50 transition-colors resize-none font-mono text-sm shadow-inner"
               />
-              <button 
-                disabled={status !== 'idle' && status !== 'error'}
+              <button
+                disabled={status === 'loading'}
                 type="submit"
-                className="w-full flex items-center justify-center gap-3 bg-primary text-bg-base py-5 rounded-2xl font-bold uppercase tracking-widest text-[11px] hover:bg-white transition-all disabled:opacity-50 mt-2 shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-primary/50"
+                className="w-full flex items-center justify-center gap-3 bg-primary text-bg-base py-5 rounded-2xl font-bold uppercase tracking-widest text-[11px] hover:bg-white transition-all disabled:opacity-50 mt-2 shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-primary/50 focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none"
               >
-                {status === 'loading' ? 'Enviando...' : status === 'success' ? '¡Mensaje Enviado!' : status === 'error' ? 'Hubo un error' : 'Enviar Mensaje'}
+                {status === 'loading' ? 'Enviando...' : status === 'success' ? 'Enviar Otro Mensaje' : status === 'error' ? 'Hubo un error' : 'Enviar Mensaje'}
                 {status === 'idle' && <ArrowRight size={16} />}
               </button>
             </form>

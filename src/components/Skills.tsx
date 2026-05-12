@@ -1,7 +1,28 @@
-import { motion } from 'motion/react';
-import { SiHtml5, SiCss, SiJavascript, SiReact, SiTailwindcss, SiPython, SiDjango, SiNodedotjs, SiExpress, SiMysql, SiPostgresql, SiMongodb, SiGit, SiGithub, SiLinux, SiDocker, SiScrumalliance, SiJira, SiPostman, SiCircleci } from 'react-icons/si';
-import { Code2, Star } from 'lucide-react';
-import { SKILLS } from '../lib/data';
+import { motion } from "motion/react";
+import {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiReact,
+  SiTailwindcss,
+  SiPython,
+  SiDjango,
+  SiNodedotjs,
+  SiExpress,
+  SiMysql,
+  SiPostgresql,
+  SiMongodb,
+  SiGit,
+  SiGithub,
+  SiLinux,
+  SiDocker,
+  SiScrumalliance,
+  SiJira,
+  SiPostman,
+  SiCircleci,
+} from "react-icons/si";
+import { Code2, Star } from "lucide-react";
+import { SKILLS } from "../lib/data";
 
 const skillIcons = {
   SiHtml5,
@@ -31,14 +52,18 @@ export function Skills() {
   return (
     <section id="habilidades" className="py-20 relative">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-16 md:mb-24"
         >
-          <h2 className="text-[10px] font-mono text-primary uppercase font-bold tracking-widest mb-4">Habilidades Técnicas</h2>
-          <h3 className="text-4xl md:text-5xl font-display font-bold text-text-main">Mi Arsenal Tecnológico</h3>
+          <h2 className="text-[10px] font-mono text-primary uppercase font-bold tracking-widest mb-4">
+            Habilidades Técnicas
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-display font-semibold text-text-main">
+            Mi Arsenal Tecnológico
+          </h3>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -57,7 +82,8 @@ export function Skills() {
               </h4>
               <div className="flex flex-wrap gap-3">
                 {skillGroup.items.map((item) => {
-                  const Icon = skillIcons[item.icon as keyof typeof skillIcons] || Star;
+                  const Icon =
+                    skillIcons[item.icon as keyof typeof skillIcons] || Star;
                   return (
                     <span
                       key={item.name}

@@ -7,68 +7,53 @@ export const NAV_LINKS = [
   { name: "Contacto", href: "#contacto" },
 ];
 
-export type SkillItem = {
-  name: string;
-  icon: string;
-  textClass: string;
-};
 
 export const SKILLS = [
   {
     category: "Frontend",
     items: [
-      { name: "HTML", icon: "SiHtml5", textClass: "text-orange-500" },
-      { name: "CSS", icon: "SiCss", textClass: "text-sky-500" },
-      { name: "JavaScript", icon: "SiJavascript", textClass: "text-yellow-500" },
-      { name: "React", icon: "SiReact", textClass: "text-sky-600" },
-      { name: "Tailwind CSS", icon: "SiTailwindcss", textClass: "text-teal-600" },
+      { name: "HTML", icon: "SiHtml5", textClass: "text-orange-400" },
+      { name: "CSS", icon: "SiCss", textClass: "text-sky-400" },
+      { name: "JavaScript", icon: "SiJavascript", textClass: "text-yellow-400" },
+      { name: "React", icon: "SiReact", textClass: "text-sky-400" },
+      { name: "Tailwind CSS", icon: "SiTailwindcss", textClass: "text-teal-400" },
     ],
-    color: "bg-primary/20 text-primary",
-    borderColor: "border-primary/30",
   },
   {
     category: "Backend",
     items: [
-      { name: "Python", icon: "SiPython", textClass: "text-emerald-600" },
-      { name: "Django", icon: "SiDjango", textClass: "text-green-600" },
-      { name: "Node.js", icon: "SiNodedotjs", textClass: "text-lime-600" },
-      { name: "Express", icon: "SiExpress", textClass: "text-indigo-600" },
+      { name: "Python", icon: "SiPython", textClass: "text-emerald-400" },
+      { name: "Django", icon: "SiDjango", textClass: "text-green-400" },
+      { name: "Node.js", icon: "SiNodedotjs", textClass: "text-lime-400" },
+      { name: "Express", icon: "SiExpress", textClass: "text-indigo-400" },
     ],
-    color: "bg-accent/20 text-accent",
-    borderColor: "border-accent/30",
   },
   {
     category: "Bases de Datos",
     items: [
-      { name: "MySQL", icon: "SiMysql", textClass: "text-cyan-600" },
-      { name: "PostgreSQL", icon: "SiPostgresql", textClass: "text-slate-700" },
-      { name: "MongoDB", icon: "SiMongodb", textClass: "text-emerald-700" },
+      { name: "MySQL", icon: "SiMysql", textClass: "text-cyan-400" },
+      { name: "PostgreSQL", icon: "SiPostgresql", textClass: "text-slate-400" },
+      { name: "MongoDB", icon: "SiMongodb", textClass: "text-emerald-400" },
     ],
-    color: "bg-secondary/20 text-secondary",
-    borderColor: "border-secondary/30",
   },
   {
     category: "Herramientas",
     items: [
-      { name: "Git", icon: "SiGit", textClass: "text-slate-700" },
-      { name: "GitHub", icon: "SiGithub", textClass: "text-slate-700" },
-      { name: "Linux", icon: "SiLinux", textClass: "text-amber-700" },
-      { name: "VS Code", icon: "Code2", textClass: "text-violet-700" },
-      { name: "Docker", icon: "SiDocker", textClass: "text-blue-700" },
+      { name: "Git", icon: "SiGit", textClass: "text-slate-400" },
+      { name: "GitHub", icon: "SiGithub", textClass: "text-slate-400" },
+      { name: "Linux", icon: "SiLinux", textClass: "text-amber-400" },
+      { name: "VS Code", icon: "Code2", textClass: "text-violet-400" },
+      { name: "Docker", icon: "SiDocker", textClass: "text-blue-400" },
     ],
-    color: "bg-blue-500/20 text-blue-400",
-    borderColor: "border-blue-500/30",
   },
   {
     category: "Metodologías",
     items: [
-      { name: "Scrum", icon: "SiScrumalliance", textClass: "text-fuchsia-700" },
-      { name: "Agile", icon: "SiJira", textClass: "text-violet-700" },
-      { name: "APIs REST", icon: "SiPostman", textClass: "text-cyan-700" },
-      { name: "CI/CD", icon: "SiCircleci", textClass: "text-rose-700" },
+      { name: "Scrum", icon: "SiScrumalliance", textClass: "text-fuchsia-400" },
+      { name: "Agile", icon: "SiJira", textClass: "text-violet-400" },
+      { name: "APIs REST", icon: "SiPostman", textClass: "text-cyan-400" },
+      { name: "CI/CD", icon: "SiCircleci", textClass: "text-rose-400" },
     ],
-    color: "bg-purple-500/20 text-purple-400",
-    borderColor: "border-purple-500/30",
   },
 ];
 
@@ -143,7 +128,6 @@ export const EXPERIENCE = [
     period: "Actual",
     description:
       "Cursando la carrera de Ingeniería Informática, formándome en sólidas bases de desarrollo de software, algoritmos, arquitectura de sistemas y gestión de proyectos tecnológicos.",
-    icon: "GraduationCap",
   },
   {
     id: 2,
@@ -152,7 +136,6 @@ export const EXPERIENCE = [
     period: "Continuo",
     description:
       "Diseño e implementación de soluciones de software desde la concepción hasta el despliegue, combinando tecnologías frontend y backend en entornos controlados.",
-    icon: "Code",
   },
   {
     id: 3,
@@ -161,7 +144,6 @@ export const EXPERIENCE = [
     period: "Continuo",
     description:
       "Aplicación de metodologías como Scrum y Agile en el ciclo de vida del software. Experiencia colaborando en repositorios con Git y comunicación técnica dentro de equipos multidisciplinares.",
-    icon: "Users",
   },
   {
     id: 4,
@@ -170,6 +152,5 @@ export const EXPERIENCE = [
     period: "Siempre",
     description:
       "Enfoque analítico para desglosar problemas complejos en componentes más pequeños y manejables, aplicando patrones de diseño y buenas prácticas de codificación.",
-    icon: "Lightbulb",
   },
 ];
