@@ -1,4 +1,9 @@
+import { useEffect, useState } from 'react';
+
 export function Footer() {
+  const [year, setYear] = useState<number | null>(null);
+  useEffect(() => setYear(new Date().getFullYear()), []);
+
   return (
     <footer className="relative z-10 w-full overflow-hidden border-t border-white/5 bg-bg-surface">
       <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -9,7 +14,7 @@ export function Footer() {
         </div>
 
         <p className="text-text-muted text-[10px] font-mono uppercase tracking-widest">
-          © {new Date().getFullYear()} Diseñado y Programado por Matias Atuan.
+          © {year ?? ''} Diseñado y Programado por Matias Atuan.
         </p>
 
         <div className="flex gap-6 text-[10px] font-mono text-text-muted uppercase tracking-widest font-bold">

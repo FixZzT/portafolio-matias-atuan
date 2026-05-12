@@ -26,7 +26,7 @@ export function Experience() {
               className="mb-16 pl-8 md:pl-12 relative group"
             >
               {/* Point */}
-              <div className="absolute w-4 h-4 bg-bg-base border-2 border-primary rounded-full -left-[8px] top-2 group-hover:scale-150 transition-transform duration-300 group-hover:bg-primary shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
+              <div className="absolute size-4 bg-bg-base border-2 border-primary rounded-full -left-[8px] top-2 group-hover:scale-150 transition-transform duration-300 group-hover:bg-primary shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
               
                <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-3">
                 <h4 className="text-2xl md:text-3xl font-heading font-bold text-text-main">{item.title}</h4>

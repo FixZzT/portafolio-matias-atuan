@@ -52,7 +52,7 @@ export function Skills() {
               className="glass-panel p-8 rounded-[2rem] flex flex-col h-full border border-white/5 hover:border-primary/40 transition-colors"
             >
               <h4 className="text-lg font-heading font-bold text-text-main mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-secondary block"></span>
+                <span className="size-2 rounded-full bg-secondary block"></span>
                 {skillGroup.category}
               </h4>
               <div className="flex flex-wrap gap-3">

@@ -15,9 +15,9 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="px-4 py-2 rounded-full glass-panel border border-primary/20 flex items-center gap-3"
           >
-            <span className="relative flex h-2 w-2">
+            <span className="relative flex size-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              <span className="relative inline-flex rounded-full size-2 bg-primary"></span>
             </span>
             <span className="text-[10px] font-mono text-primary uppercase font-bold tracking-widest">
               Disponible para trabajar
@@ -68,7 +68,8 @@ export function Hero() {
               <a
                 href="https://github.com/FixZzT"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
                 className="p-4 rounded-full glass-panel text-text-main hover:text-primary hover:border-primary/50 transition-all flex-[1] sm:flex-none flex justify-center"
               >
                 <Github size={20} />
@@ -76,13 +77,15 @@ export function Hero() {
               <a
                 href="https://www.linkedin.com/in/matias-nicolas-atuan-mutis-7165b930b/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="p-4 rounded-full glass-panel text-text-main hover:text-secondary hover:border-secondary/50 transition-all flex-[1] sm:flex-none flex justify-center"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="mailto:matiasatuan.2018@gmail.com"
+                aria-label="Enviar correo"
                 className="p-4 rounded-full glass-panel text-text-main hover:text-primary hover:border-primary/50 transition-all flex-[1] sm:flex-none flex justify-center"
               >
                 <Mail size={20} />

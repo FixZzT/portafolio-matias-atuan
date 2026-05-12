@@ -18,7 +18,7 @@ export const SKILLS = [
     category: "Frontend",
     items: [
       { name: "HTML", icon: "SiHtml5", textClass: "text-orange-500" },
-      { name: "CSS", icon: "SiCss3", textClass: "text-sky-500" },
+      { name: "CSS", icon: "SiCss", textClass: "text-sky-500" },
       { name: "JavaScript", icon: "SiJavascript", textClass: "text-yellow-500" },
       { name: "React", icon: "SiReact", textClass: "text-sky-600" },
       { name: "Tailwind CSS", icon: "SiTailwindcss", textClass: "text-teal-600" },

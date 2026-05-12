@@ -35,15 +35,15 @@ export function About() {
             ].map((item, i) => {
               const Icon = item.icon;
               return (
-                <motion.div 
-                  key={i}
+                <motion.div
+                  key={item.title}
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className="glass-panel bg-secondary/10 p-8 md:p-10 rounded-[2rem] group hover:bg-secondary/20 border border-secondary/20 transition-colors"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-bg-elevated/50 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                  <div className="size-14 rounded-2xl bg-bg-elevated/50 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
                     <Icon size={24} />
                   </div>
                   <h4 className="text-xl font-heading font-bold text-text-main mb-3">{item.title}</h4>

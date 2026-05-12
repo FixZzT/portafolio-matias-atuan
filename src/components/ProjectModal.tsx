@@ -14,12 +14,20 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
+      const handleEscape = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') onClose();
+      };
+      window.addEventListener('keydown', handleEscape);
+      requestAnimationFrame(() => {
+        const closeBtn = document.querySelector('[data-modal-close]') as HTMLButtonElement;
+        closeBtn?.focus();
+      });
+      return () => {
+        document.body.style.overflow = 'unset';
+        window.removeEventListener('keydown', handleEscape);
+      };
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   return (
@@ -48,7 +56,8 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 className="w-full h-full object-cover opacity-60"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg-base to-transparent opacity-90" />
-              <button 
+              <button
+                data-modal-close
                 onClick={onClose}
                 className="absolute top-6 right-6 p-2 rounded-full glass-panel text-text-muted hover:text-white hover:bg-white/10 transition-colors"
               >
@@ -68,7 +77,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             </div>
 
             {/* Scrollable Content */}
-            <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar flex-1 bg-bg-surface">
+            <div className="p-6 md:p-8 overflow-y-auto flex-1 bg-bg-surface">
               <div className="space-y-10">
                 
                 <section>
@@ -93,7 +102,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                   </section>
                   <section>
                     <h4 className="flex items-center gap-3 text-xs font-mono font-bold text-text-main uppercase tracking-widest mb-4">
-                      <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+                      <span className="size-1.5 rounded-full bg-secondary" />
                       Arquitectura
                     </h4>
                     <p className="text-text-muted text-base leading-relaxed">

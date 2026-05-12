@@ -46,7 +46,7 @@ export function Contact() {
             viewport={{ once: true }}
             className="flex flex-col items-center text-center"
           >
-            <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(239,68,68,0.3)]">
+            <div className="size-16 rounded-2xl bg-primary flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(239,68,68,0.3)]">
               <MessageSquareCode size={32} className="text-white" />
             </div>
             
