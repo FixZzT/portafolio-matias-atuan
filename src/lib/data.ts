@@ -77,6 +77,25 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    id: "pablo-atuan",
+    title: "Pablo Atuan — Ilusionista",
+    shortDescription:
+      "Portfolio profesional para un ilusionista chileno. Sitio web one-page con diseño elegante, animaciones fluidas y orientado a conversión de clientes.",
+    fullDescription:
+      "Sitio web tipo landing page / portfolio profesional desarrollado para Pablo Atuan, un ilusionista chileno con más de 500 eventos realizados. El sitio presenta sus servicios de magia para eventos infantiles, matrimonios y corporativos, además de cursos personalizados de ilusionismo. Incluye formulario de contacto para cotizaciones, SEO completo con Open Graph y Twitter Cards, y soporte PWA.",
+    problem:
+      "El artista necesitaba presencia digital profesional para captar clientes en múltiples segmentos (infantil, bodas, empresas), mostrando su trayectoria, testimonios y servicios de forma atractiva y con llamado a la acción claro.",
+    architecture:
+      "SPA construida con React 19 y Vite. Estilizado con Tailwind CSS v4, animaciones declarativas con Framer Motion. Componentes modulares: Hero, About, Services, Testimonials, Courses, Contact. SEO mediante react-helmet-async. Preparado para despliegue en Vercel.",
+    challenges:
+      "Lograr un diseño que transmita elegancia y misterio sin sacrificar rendimiento. Optimizar las animaciones para que no compitan con el LCP ni generen layout shifts. Implementar formulario de contacto funcional sin backend serverless.",
+    learnings:
+      "Integración de Framer Motion con Tailwind para micro-interacciones refinadas. Configuración de SEO técnico (OG, Twitter Cards, structured data). PWA con manifest e íconos para experiencia móvil completa.",
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite", "PWA"],
+    status: "En Desarrollo",
+    image: "/project-pablo-atuan.jpg",
+  },
+  {
     id: "carmen-patisserie",
     title: "Carmen Pâtisserie",
     shortDescription:
