@@ -64,31 +64,31 @@ export function Projects() {
                         Live Demo <ExternalLink size={16} />
                       </a>
                     ) : (
-                      <button 
+                      <button
                         onClick={() => setSelectedProject(project)}
                         className="flex-1 sm:flex-none flex justify-center items-center gap-3 px-8 py-4 bg-secondary text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-bg-base transition-all shadow-lg hover:shadow-secondary/30 shadow-[0_0_15px_rgba(59,130,246,0.3)]"
                       >
-                        Caso de Estudio <ExternalLink size={16} />
+                        Información <ExternalLink size={16} />
                       </button>
                     )}
                     
                     {project.githubUrl ? (
-                      <a 
+                      <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 sm:flex-none flex justify-center items-center gap-3 px-8 py-4 bg-bg-elevated/80 text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-bg-elevated hover:text-primary transition-all border border-white/5"
                       >
-                         Código <Github size={16} />
+                        Código <Github size={16} />
                       </a>
-                    ) : (
-                       <button 
+                    ) : project.demoUrl ? (
+                      <button
                         onClick={() => setSelectedProject(project)}
                         className="flex-1 sm:flex-none flex justify-center items-center gap-3 px-8 py-4 bg-bg-elevated/80 text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-bg-elevated hover:text-primary transition-all border border-white/5"
                       >
-                        Detalles <ExternalLink size={16} />
+                        Información <ExternalLink size={16} />
                       </button>
-                    )}
+                    ) : null}
                   </div>
                 </div>
 

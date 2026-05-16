@@ -118,6 +118,27 @@ export const PROJECTS: Project[] = [
       "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
   },
   {
+    id: "loggrepper",
+    title: "loggrepper",
+    shortDescription:
+      "CLI tool en Python para análisis contextual de logs. Ventanas de tiempo basadas en timestamps reales, no líneas. Agrupación inteligente de incidentes.",
+    fullDescription:
+      "Herramienta de línea de comandos que implementa un grep contextual para archivos de log. A diferencia de grep tradicional que usa ventanas por número de líneas (-B/-A), loggrepper parsea timestamps reales y extrae líneas dentro de una ventana temporal (±N segundos) alrededor de cada match. Detecta automáticamente el formato de timestamp (ISO 8601, syslog, nginx, epoch-ms) y agrupa líneas sueltas en incidentes, fusionando ventanas solapadas. Soporta entrada por pipe (docker logs, kubectl logs) y salida en formato pretty (Rich) o JSON para piping con jq.",
+    problem:
+      "grep -B/-A asume que N líneas cubren la ventana de tiempo necesaria, pero logs con verbosidad variable rompen esa heurística. Depurar un error requiere ver qué pasó antes y después en tiempo real, no en líneas arbitrarias. Además, logs de producción suelen venir por pipe (docker/k8s) y necesitan parseo rápido.",
+    architecture:
+      "CLI construida con Click para la interfaz de comandos y Rich para formato de salida. Arquitectura modular: timestamp.py (detección y parseo de 5 formatos), matcher.py (búsqueda con regex), grouper.py (agrupación y fusión de ventanas), formatter.py (pretty y JSON). Tipado completo con dataclasses (Incident, Line). 14 tests con pytest cubriendo cada módulo.",
+    challenges:
+      "Diseñar la detección automática de formato de timestamp que funcione con cualquier archivo sin configuración previa. Implementar la fusión de ventanas solapadas sin O(n²). Soportar stdin para compatibilidad con pipes de Docker/Kubernetes.",
+    learnings:
+      "Diseño de CLIs con Click y Rich para experiencia de usuario pulida. Parseo robusto de timestamps con múltiples formatos. Agrupación eficiente de intervalos solapados. Empaquetado con setuptools y entry points para distribución via pip/pipx.",
+    technologies: ["Python", "Click", "Rich", "pytest", "CLI"],
+    status: "Activo",
+    githubUrl: "https://github.com/FixZzT/loggrepper",
+    image:
+      "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=800&q=80",
+  },
+  {
     id: "sistema-rest-api",
     title: "Sistema REST API",
     shortDescription:
