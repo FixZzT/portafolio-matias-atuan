@@ -1,8 +1,21 @@
 import { motion } from 'motion/react';
-import { ExternalLink, Github } from 'lucide-react';
-import { PROJECTS, Project } from '../lib/data';
+import { ExternalLink, Github, Lock } from 'lucide-react';
+import { PROJECTS, Project, ProjectStatus } from '../lib/data';
 import { useState } from 'react';
 import { ProjectModal } from './ProjectModal';
+
+const statusStyles: Record<ProjectStatus, { badge: string; card?: string }> = {
+  Activo: {
+    badge: 'text-primary border-primary/20 bg-primary/5',
+  },
+  'En Desarrollo': {
+    badge: 'text-amber-400 border-amber-400/20 bg-amber-400/5',
+  },
+  Privado: {
+    badge: 'text-gray-400 border-gray-400/20 bg-gray-400/5',
+    card: 'opacity-75',
+  },
+};
 
 export function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -10,7 +23,7 @@ export function Projects() {
   return (
     <section id="proyectos" className="py-20 lg:py-32">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -25,102 +38,110 @@ export function Projects() {
           </p>
         </motion.div>
 
-        <div className="flex flex-col gap-12 md:gap-24">
-          {PROJECTS.map((project, idx) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="group glass-panel rounded-[2.5rem] overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
-            >
-              <div className="grid lg:grid-cols-2 gap-8 p-4 md:p-8 items-center">
-                
-                {/* Content */}
-                <div className={`flex flex-col justify-center py-4 px-2 md:px-8 order-2 ${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.slice(0, 4).map(tech => (
-                      <span key={tech} className="text-[10px] font-mono text-primary border border-primary/20 bg-primary/5 px-4 py-1.5 rounded-full uppercase font-bold tracking-widest">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {PROJECTS.map((project) => {
+            const style = statusStyles[project.status];
 
-                  <h4 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-text-main mb-6 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h4>
-                  <p className="text-text-muted text-base md:text-lg leading-relaxed mb-10">
-                    {project.shortDescription}
-                  </p>
-
-                  <div className="flex flex-wrap gap-4 mt-auto">
-                    {project.demoUrl ? (
-                      <a 
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 sm:flex-none flex justify-center items-center gap-3 px-8 py-4 bg-secondary text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-bg-base transition-all shadow-lg hover:shadow-secondary/30 shadow-[0_0_15px_rgba(59,130,246,0.3)]"
-                      >
-                        Live Demo <ExternalLink size={16} />
-                      </a>
-                    ) : (
-                      <button
-                        onClick={() => setSelectedProject(project)}
-                        className="flex-1 sm:flex-none flex justify-center items-center gap-3 px-8 py-4 bg-secondary text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-bg-base transition-all shadow-lg hover:shadow-secondary/30 shadow-[0_0_15px_rgba(59,130,246,0.3)]"
-                      >
-                        Información <ExternalLink size={16} />
-                      </button>
-                    )}
-                    
-                    {project.githubUrl ? (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 sm:flex-none flex justify-center items-center gap-3 px-8 py-4 bg-bg-elevated/80 text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-bg-elevated hover:text-primary transition-all border border-white/5"
-                      >
-                        Código <Github size={16} />
-                      </a>
-                    ) : project.demoUrl ? (
-                      <button
-                        onClick={() => setSelectedProject(project)}
-                        className="flex-1 sm:flex-none flex justify-center items-center gap-3 px-8 py-4 bg-bg-elevated/80 text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-bg-elevated hover:text-primary transition-all border border-white/5"
-                      >
-                        Información <ExternalLink size={16} />
-                      </button>
-                    ) : null}
-                  </div>
-                </div>
-
-                {/* Image Container */}
-                <div className={`relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-bg-base border border-white/5 order-1 ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
+            return (
+              <motion.div
+                key={project.id}
+                data-project-card
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                className={`group/card glass-panel rounded-[2rem] overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 flex flex-col ${style.card ?? ''}`}
+              >
+                {/* Image */}
+                <div className="relative aspect-[16/9] overflow-hidden bg-bg-base border-b border-white/5">
                   <img
                     src={project.image}
                     alt={project.title}
                     loading="lazy"
                     width={800}
-                    height={600}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                    height={500}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105 opacity-80 group-hover/card:opacity-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-base via-transparent to-transparent opacity-80" />
-                  
-                  <div className="absolute top-6 left-6">
-                    <span className="px-5 py-2 rounded-full bg-black/50 backdrop-blur-md text-[10px] font-bold uppercase tracking-widest text-primary border border-primary/20 shadow-xl">
-                      {project.status}
+                  <div className="absolute top-4 left-4 flex items-center gap-2">
+                    <span className={`px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md text-[9px] font-bold uppercase tracking-widest border shadow-xl ${style.badge}`}>
+                      {project.status === 'Privado' ? (
+                        <span className="flex items-center gap-1">
+                          <Lock size={10} /> Privado
+                        </span>
+                      ) : (
+                        project.status
+                      )}
                     </span>
+                    {project.status === 'En Desarrollo' && (
+                      <span className="relative flex size-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full size-2 bg-amber-500" />
+                      </span>
+                    )}
                   </div>
                 </div>
 
-              </div>
-            </motion.div>
-          ))}
+                {/* Content */}
+                <div className="flex flex-col flex-1 p-5">
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {project.technologies.slice(0, 4).map(tech => (
+                      <span key={tech} className="text-[9px] font-mono text-primary border border-primary/20 bg-primary/5 px-3 py-1 rounded-full uppercase font-bold tracking-widest">
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <span className="text-[9px] font-mono text-text-muted border border-white/5 bg-white/[0.02] px-3 py-1 rounded-full uppercase font-bold tracking-widest">
+                        +{project.technologies.length - 4}
+                      </span>
+                    )}
+                  </div>
+
+                  <h4 className="text-xl font-display font-semibold text-text-main mb-2 group-hover/card:text-primary transition-colors">
+                    {project.title}
+                  </h4>
+                  <p className="text-sm text-text-muted leading-relaxed mb-5 line-clamp-3">
+                    {project.shortDescription}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    <button
+                      onClick={() => setSelectedProject(project)}
+                      className="flex-1 flex justify-center items-center gap-1.5 px-4 py-2.5 bg-secondary text-white rounded-full text-[9px] font-bold uppercase tracking-widest hover:bg-primary hover:text-bg-base transition-all shadow-lg hover:shadow-secondary/30"
+                    >
+                      Información <ExternalLink size={13} />
+                    </button>
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-center items-center gap-1.5 px-3 py-2.5 bg-bg-elevated/80 text-white rounded-full text-[9px] font-bold uppercase tracking-widest hover:bg-bg-elevated hover:text-primary transition-all border border-white/5"
+                      >
+                        Demo <ExternalLink size={12} />
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-center items-center gap-1.5 px-3 py-2.5 bg-bg-elevated/80 text-white rounded-full text-[9px] font-bold uppercase tracking-widest hover:bg-bg-elevated hover:text-primary transition-all border border-white/5"
+                      >
+                        <Github size={13} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
-      <ProjectModal 
-        project={selectedProject} 
-        isOpen={!!selectedProject} 
-        onClose={() => setSelectedProject(null)} 
+      <ProjectModal
+        project={selectedProject}
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
       />
     </section>
   );

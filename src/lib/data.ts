@@ -139,6 +139,26 @@ export const PROJECTS: Project[] = [
       "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=800&q=80",
   },
   {
+    id: "logpulse",
+    title: "LogPulse",
+    shortDescription:
+      "Analizador visual de logs para desarrolladores y sysadmins. Indexa archivos de 500MB+ con SQLite FTS5, detecta anomalías, correlaciona eventos multi-fuente y permite que IA explique fallos.",
+    fullDescription:
+      "Aplicación de escritorio (Qt 6 / PySide6) que indexa archivos de log masivos (500MB+) en SQLite con FTS5 para búsqueda full-text en milisegundos. Detecta anomalías mediante Z-score sobre buckets temporales, correlaciona eventos entre múltiples fuentes con un algoritmo two-pointer O(n log n), y exporta resultados a CSV/JSON. Incluye live tail con watchdog, plugin system para parsers personalizados, y asistente de IA vía Groq/Ollama que analiza entradas de log y resume errores. Bilingüe (ES/EN), 197 tests, tipado completo con mypy.",
+    problem:
+      "Los analizadores de logs tradicionales colapsan con archivos grandes, carecen de búsqueda full-text eficiente, y no ayudan a entender la causa raíz. grep solo muestra coincidencias; LogPulse indexa, correlaciona y explica.",
+    architecture:
+      "Aplicación desktop con arquitectura MV en capas: models/ (dataclasses puras), services/ (lógica de negocio sin Qt), parsers/ (plugin ABC para formatos custom), viewmodels/ (puente Qt-aware), views/ (widgets PySide6), workers/ (QThread/QRunnable). SQLite en memoria con WAL mode y FTS5. Comunicación con Groq/Ollama vía httpx asíncrono. Empaquetado con PyInstaller.",
+    challenges:
+      "Indexar archivos de 500MB+ sin bloquear la UI requirió lecturas chunked de 4MB e inserts batch de 10K líneas. La detección de anomalías con Z-score exigió bucketing temporal eficiente y recalibración automática. El algoritmo de correlación two-pointer tuvo que manejar timestamps desordenados y gaps temporales sin degradar a O(n²).",
+    learnings:
+      "Arquitectura MV en PySide6 con separación estricta de responsabilidades. Indexación full-text con SQLite FTS5 y WAL para concurrencia. Detección estadística de anomalías con Z-score. Sistema de plugins con ABC para extensibilidad. Empaquetado cross-platform con PyInstaller. Integración de LLMs en aplicaciones desktop.",
+    technologies: ["Python", "PySide6", "SQLite", "Qt 6", "Groq API", "Ollama"],
+    status: "Activo",
+    githubUrl: "https://github.com/FixZzT/logpulse",
+    image: "/project-logpulse.png",
+  },
+  {
     id: "sistema-rest-api",
     title: "Sistema REST API",
     shortDescription:
